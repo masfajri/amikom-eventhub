@@ -17,9 +17,19 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+      //  User::factory()->create([
+          //  'name' => 'Test User',
+          //  'email' => 'test@example.com',
+       // ]);
+        $category = \App\Models\Category::create([
+            'name' => 'Seminar IT',
+            'slug' => 'seminar-it',
         ]);
+
+        $category2 = \App\Models\Category::firstOrCreate([
+            'name' => 'Entertaiment',
+            'slug' => 'entertaiment',
+        ]);
+
     }
 }
